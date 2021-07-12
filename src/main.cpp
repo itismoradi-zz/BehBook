@@ -5,10 +5,12 @@
 
 int main()
 {
-    return 0;
+    App app;
+    return app.exec();
 }
 
 //Data Structures and Algorithms Course
+//Final Project
 //at BuAli Sina university of Hamedan
 //coders : Mohammad Moradi, Erfan Ghaem Panah
 //summer 2021
