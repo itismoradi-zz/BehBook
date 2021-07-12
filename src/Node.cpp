@@ -4,8 +4,8 @@ class Node
         int data; 
         Node next; 
     public :
-        int getData();
+        unsigned int getData();
         void setData(int);
-        void setNext(Node n);
+        void insert(double);
         Node getNext();
 }
