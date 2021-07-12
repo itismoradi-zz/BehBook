@@ -1,13 +1,10 @@
 #ifndef APP_IG
 #define APP_IG
 
-class App
-{
-    public:
-        App();
-        int exec();
-    private:
-        bool status;
+class Node {
+public:
+	int data;
+	Node* next;
 };
 
 #endif
