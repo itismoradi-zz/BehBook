@@ -1,22 +1,9 @@
-class linkedList
-{
-    private :
-        Node frist;
-    public :
-        Node* InsertNode(int , double ) ;
-        void removeNode(double) ;
-        int  FindNode (double) ;
-        bool IsEmpty() ;
-
-}
-//////////////////////////////////////////////////////////
+#include "linkedList.hpp"
 
 bool linkedList::IsEmpty()
 {
-    return first.getNext() == null ;
+    return (head->next == null);
 }   
-
-//////////////////////////////////////////////////////////
 
 Node* linkedList::InsertNode(int index, double x) 
 {
