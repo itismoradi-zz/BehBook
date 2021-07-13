@@ -8,10 +8,10 @@ class linkedList
     private :
         Node * head;
     public :
-        bool InsertNode(unsigned int);
+        bool insertNode(unsigned int);
         bool removeNode(unsigned int);
-        bool  FindNode(unsigned int);
-        bool IsEmpty();
+        bool  findNode(unsigned int);
+        bool isEmpty();
 }
 
 #endif
