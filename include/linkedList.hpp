@@ -6,7 +6,7 @@
 class linkedList
 {
     private :
-        Node * head;
+        Node * head = nullptr;
     public :
         bool insertNode(unsigned int);
         bool removeNode(unsigned int);
