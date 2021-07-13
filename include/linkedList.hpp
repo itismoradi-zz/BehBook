@@ -3,14 +3,14 @@
 
 #include "node.hpp"
 
-class linkedList
+class LinkedList
 {
     private :
         Node * head = nullptr;
     public :
         bool insertNode(unsigned int);
         bool removeNode(unsigned int);
-        bool  findNode(unsigned int);
+        bool findNode(unsigned int);
         bool isEmpty();
 }
 
