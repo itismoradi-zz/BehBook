@@ -1,10 +1,17 @@
+#ifndef LINKEDLIST_IG
+#define LINKEDLIST_IG
+
+#include "node.hpp"
+
 class linkedList
 {
     private :
-        Node frist;
+        Node * head;
     public :
-        Node* InsertNode(int , double ) ;
-        void removeNode(double) ;
-        int  FindNode (double) ;
-        bool IsEmpty() ;
+        bool InsertNode(unsigned int);
+        bool removeNode(unsigned int);
+        bool  FindNode(unsigned int);
+        bool IsEmpty();
 }
+
+#endif
