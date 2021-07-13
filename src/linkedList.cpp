@@ -1,36 +1,26 @@
 #include "linkedList.hpp"
+#include <exception>
+
+using namespace std;
 
 bool linkedList::IsEmpty()
 {
     return (head->next == null);
 }   
 
-Node* linkedList::InsertNode(int index, double x) 
+bool LinkedList::insertNode(unsigned int x);
 {
-    if (index < 0) return NULL;
-
-    int currIndex = 1;
-    Node* currNode = head;
+    Node * current = this->head;
     
-    while (currNode && index > currIndex) {
-        currNode = currNode->next;
-        currIndex++;
+    while(current->next != nullptr)
+    {
+        current = current->next;
     }
-    if (index > 0 && currNode == NULL) return NULL;
-    Node* newNode = new Node;
-    newNode->data = x;
     
-    if (index == 0) {
-        newNode->next = head;
-        head = newNode;
-    }
-    else {
-        newNode->next = currNode->next;
-        currNode->next = newNode;
-    }
-    return newNode;
+    current->next = new Node;
+    current->next->data = x;
+    current->next->next = nullptr;
 }
-//////////////////////////////////////////////////////////
 
 int linkedList::FindNode(double x)
 {
