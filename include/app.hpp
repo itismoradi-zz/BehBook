@@ -13,7 +13,6 @@ class App
         bool status;
         unsigned int days;
         unsigned int chapters;
-        unsigned int temp;
         LinkedList pages;
 };
 

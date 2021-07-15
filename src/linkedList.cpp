@@ -3,12 +3,12 @@
 
 using namespace std;
 
-bool linkedList::IsEmpty()
+bool LinkedList::isEmpty()
 {
-    return (head->next == null);
+    return (head->next == nullptr);
 }   
 
-bool LinkedList::insertNode(unsigned int x);
+bool LinkedList::insertNode(unsigned int x)
 {
     Node * current = this->head;
     
@@ -22,7 +22,7 @@ bool LinkedList::insertNode(unsigned int x);
     current->next->next = nullptr;
 }
 
-int linkedList::FindNode(double x)
+bool LinkedList::findNode(unsigned int x)
 {
     Node* currNode = head;
     int currIndex = 1;
@@ -36,8 +36,8 @@ int linkedList::FindNode(double x)
 
 //////////////////////////////////////////////////////////
 
-int linkedList::removeNode(double x) {
-    Node* prevNode = NULL;
+bool LinkedList::removeNode(unsigned int x) {
+    Node* prevNode = nullptr;
     Node* currNode = head;
     int currIndex = 1;
     while (currNode && currNode->data != x) {

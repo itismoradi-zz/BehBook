@@ -12,6 +12,6 @@ class LinkedList
         bool removeNode(unsigned int);
         bool findNode(unsigned int);
         bool isEmpty();
-}
+};
 
 #endif

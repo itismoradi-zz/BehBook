@@ -3,9 +3,9 @@
 
 class Node
 {
-    public :
+    public:
         unsigned int data; 
         Node * next;
-}
+};
 
 #endif

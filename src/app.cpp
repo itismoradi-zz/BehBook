@@ -1,5 +1,7 @@
 #include "app.hpp"
 #include <exception>
+#include <iostream>
+
 using namespace std;
 
 App::App()
@@ -7,13 +9,14 @@ App::App()
 
 }
 
-App::exec()
+int App::exec()
 {
     getInformation();
 }
 
 void App::getInformation()
 {
+    unsigned int temp;
     cout << "----- BehBook -----" << endl;
 
     cout << "Enter the number of days :" << endl;
