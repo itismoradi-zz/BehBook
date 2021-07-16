@@ -1,19 +1,25 @@
 #ifndef APP_IG
 #define APP_IG
 
-#include "linkedList.hpp"
+#include <vector>
+#include "graph.hpp"
 
 class App
 {
     public:
         App();
+        void splashScreen();
         int exec();
         void getInformation();
+        void print() const;
+        void checkInputs() const;
+        void calculateAvg();
     private:
-        bool status;
         unsigned int days;
         unsigned int chapters;
-        LinkedList pages;
+        unsigned int averageChapterPages;
+        std::vector<unsigned int> ChaptersPages;
+        Graph graph;
 };
 
 #endif
