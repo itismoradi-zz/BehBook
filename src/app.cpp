@@ -2,6 +2,7 @@
 #include <exception>
 #include <cstdlib>
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 
@@ -101,4 +102,13 @@ void App::calculateAvg()
     }
 
     averageChapterPages = sum / chapters; 
+}
+
+float standardDeviation(float data[], int n)
+{
+    float mean=0.0 , sum_deviation=0.0;
+    for(i=0; i<n;++i)  mean+=data[i]; 
+    mean=mean/n;
+    for(i=0; i<n;++i) sum_deviation+=(data[i]-mean)*(data[i]-mean);
+    return sqrt(sum_deviation/n);
 }
