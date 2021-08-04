@@ -10,7 +10,7 @@ class Graph
     public:
         Graph(unsigned int *, unsigned int *, unsigned int *, std::vector<unsigned int> *);
     private:
-        LinkedList ** list;
+        LinkedList * list;
         ReadingPerDay reading;
         unsigned int * days;
         unsigned int * chapters;
