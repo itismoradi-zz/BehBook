@@ -19,7 +19,7 @@ class App
         unsigned int chapters;
         unsigned int averageChapterPages;
         std::vector<unsigned int> ChaptersPages;
-        Graph graph;
+        Graph * graph;
 };
 
 #endif

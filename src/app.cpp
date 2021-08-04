@@ -30,6 +30,7 @@ int App::exec()
 {
     getInformation();
     calculateAvg();
+    graph = new Graph(&days, &chapters, &averageChapterPages, &ChaptersPages);
     print();
 }
 
@@ -102,13 +103,4 @@ void App::calculateAvg()
     }
 
     averageChapterPages = sum / chapters; 
-}
-
-float standardDeviation(float data[], int n)
-{
-    float mean=0.0 , sum_deviation=0.0;
-    for(i=0; i<n;++i)  mean+=data[i]; 
-    mean=mean/n;
-    for(i=0; i<n;++i) sum_deviation+=(data[i]-mean)*(data[i]-mean);
-    return sqrt(sum_deviation/n);
 }
