@@ -16,7 +16,7 @@ class Graph
         unsigned int * chapters;
         unsigned int * averageChapterPages;
         std::vector<unsigned int> * ChaptersPages;
-    
+        unsigned int index;
         void enterData();
 };
 
