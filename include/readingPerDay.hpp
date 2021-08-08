@@ -3,42 +3,31 @@
 
 #include <cmath>
 
-struct ReadingPerDay
+/*
+    This class compares each mode of graph traversal in book chapters
+    with the mode previously stored in it
+    It takes a standard deviation from the set of pages it should read per day,
+    and if it is less than the previous mode, the new mode is more optimal,
+    so it replaces it.
+*/
+
+class ReadingPerDay
 {
-    //dynamic arrays
-    int * chapters;
-    unsigned int * pages;
-    unsigned int days;
-    
-    ReadingPerDay(unsigned int days) :
-        days(days)
-    {
-        chapters = new int[days + 1];
-        pages = new unsigned int[days];
-    }
-    ~ReadingPerDay()
-    {
-        delete pages;
-        delete chapters;
-    }
-    double standardDeviation()
-    {
-        double avg = 0.0 , sum_deviation = 0.0;
-
-        for(unsigned int i = 0; i < days; i++)  
-        {
-            avg += pages[i]; 
-        }
-
-        avg /= days;
-
-        for(unsigned int i = 0; i < days; i++)
-        {
-            sum_deviation += std::pow((pages[i] - avg), 2);
-        } 
-        
-        return std::sqrt(sum_deviation / days);
-    }
+    public:
+        ReadingPerDay(unsigned int);
+        ~ReadingPerDay();
+        ReadingPerDay & operator << (int);
+        bool operator > (ReadingPerDay &);
+        void operator = (ReadingPerDay &);
+        double standardDeviation();
+        int * getChapters();
+        unsigned int * getPages();
+    private:
+        //dynamic arrays
+        int * chapters;         //capters traversal number
+        unsigned int * pages;   //number of pages read per each day
+        unsigned int days;
+        unsigned int index;     //first empty house after full houses of chapters dynamic array
 };
 
 #endif

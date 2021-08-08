@@ -6,4 +6,5 @@ add_executable(${CMAKE_PROJECT_NAME}
         src/app.cpp
         src/linkedList.cpp
         src/graph.cpp
+        src/readingPerDay.cpp
 )
