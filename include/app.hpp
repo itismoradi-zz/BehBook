@@ -11,7 +11,7 @@ class App
         void splashScreen();
         int exec();
         void getInformation();
-        void print() const;
+        void print(ReadingPerDay &);
         void checkInputs() const;
         void calculateAvg();
     private:

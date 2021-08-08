@@ -31,7 +31,8 @@ int App::exec()
     getInformation();
     calculateAvg();
     graph = new Graph(&days, &chapters, &averageChapterPages, &ChaptersPages);
-    print();
+    graph->findOptimal();
+    print(~(*graph));
 }
 
 void App::getInformation()
@@ -66,7 +67,7 @@ void App::getInformation()
     cout << endl;
 }
 
-void App::print() const
+void App::print(ReadingPerDay & reading)
 {
     cout << "!!! BehBook suggests reading your book optimally like this :" << endl;
     cout << "    * Average reading of book pages per day : " << averageChapterPages << endl;
