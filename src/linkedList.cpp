@@ -8,7 +8,7 @@ bool LinkedList::isEmpty()
     return (head == nullptr);
 }   
 
-bool LinkedList::insertNode(unsigned int x)
+bool LinkedList::insertNode(unsigned int x ,unsigned int y)
 {
     Node * current = this->head;
     
@@ -20,7 +20,8 @@ bool LinkedList::insertNode(unsigned int x)
     try
     {
         current->next = new Node;
-        current->next->data = x;
+        current->next->capterNumber = x;
+        current->next->pagesPerDay = y;
         current->next->next = nullptr;
     }
     catch(...)
@@ -37,7 +38,7 @@ bool LinkedList::findNode(unsigned int x)
 
     while(currentNode != nullptr)
     {
-        if(currentNode->data == x)
+        if(currentNode->capterNumber == x)
         {
             return true;
         }
@@ -55,7 +56,7 @@ bool LinkedList::removeNode(unsigned int x)
         throw "Linked List is Empty";
     }
 
-    if(head->data == x)
+    if(head->capterNumber == x)
     {
         Node * temp = head->next;
         delete head;
@@ -68,7 +69,7 @@ bool LinkedList::removeNode(unsigned int x)
 
     while(currentNode != nullptr)
     {
-        if(currentNode->data == x)
+        if(currentNode->capterNumber == x)
         {
             prevNode->next = currentNode->next;
             delete currentNode;
