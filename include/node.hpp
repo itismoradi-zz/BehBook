@@ -4,7 +4,9 @@
 class Node
 {
     public:
-        unsigned int data; 
+        int capterNumber;
+        unsigned int pagesPerDay;
+        bool visited; 
         Node * next;
 };
 
