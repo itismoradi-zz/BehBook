@@ -9,7 +9,8 @@ class LinkedList
         Node * head = nullptr;
     public :
         bool isEmpty();
-        void insertNode(int ,unsigned int);
+        void insertNode(unsigned int ,unsigned int);
+        Node * getNode(unsigned int);
 };
 
 #endif

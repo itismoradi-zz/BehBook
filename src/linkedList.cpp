@@ -8,8 +8,17 @@ bool LinkedList::isEmpty()
     return (head == nullptr);
 }   
 
-void LinkedList::insertNode(int x ,unsigned int y)
+void LinkedList::insertNode(unsigned int x ,unsigned int y)
 {
+    if(isEmpty())
+    {
+        head = new Node;
+        head->chapterNumber = x;
+        head->pagesPerDay = y;
+        head->next = nullptr;
+        return;
+    }
+
     Node * current = this->head;
     
     while(current->next != nullptr)
@@ -28,4 +37,16 @@ void LinkedList::insertNode(int x ,unsigned int y)
     {
         throw "Error!!!";
     }
+}
+
+Node * LinkedList::getNode(unsigned int nodeNumber)
+{
+    Node * current = this->head;
+
+    while(current->chapterNumber != nodeNumber)
+    {
+        current = current->next;
+    }
+
+    return current;
 }

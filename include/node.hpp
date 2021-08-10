@@ -7,7 +7,7 @@ class Node
         int chapterNumber;
         unsigned int pagesPerDay;
         bool visited; 
-        Node * next;
+        Node * next = nullptr;
 };
 
 #endif
