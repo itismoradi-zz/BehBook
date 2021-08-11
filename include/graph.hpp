@@ -9,6 +9,8 @@ class Graph
 {
     public:
         Graph(unsigned int *, unsigned int *, unsigned int *, std::vector<unsigned int> *);
+        ReadingPerDay & operator ~ ();
+        void findOptimal();
     private:
         LinkedList * list;
         ReadingPerDay reading;
@@ -16,8 +18,10 @@ class Graph
         unsigned int * chapters;
         unsigned int * averageChapterPages;
         std::vector<unsigned int> * ChaptersPages;
-        unsigned int index;
         void enterData();
+        unsigned int findPagesBetweenTwoChapters(int, int) const;
+        void traversal(LinkedList *, unsigned int);
+        void traversal(Node *);
 };
 
 #endif

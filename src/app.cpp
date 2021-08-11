@@ -28,11 +28,18 @@ void App::splashScreen()
 
 int App::exec()
 {
-    getInformation();
-    calculateAvg();
-    graph = new Graph(&days, &chapters, &averageChapterPages, &ChaptersPages);
-    graph->findOptimal();
-    print(~(*graph));
+    try
+    {
+        getInformation();
+        calculateAvg();
+        graph = new Graph(&days, &chapters, &averageChapterPages, &ChaptersPages);
+        graph->findOptimal();
+        print(~(*graph));
+    }
+    catch(const char * message)
+    {
+        cout << "! " << message << endl;
+    }
 }
 
 void App::getInformation()

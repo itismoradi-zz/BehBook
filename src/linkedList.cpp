@@ -1,4 +1,5 @@
 #include "linkedList.hpp"
+#include <iostream>
 #include <exception>
 
 using namespace std;
@@ -32,6 +33,8 @@ void LinkedList::insertNode(unsigned int x ,unsigned int y)
         current->next->chapterNumber = x;
         current->next->pagesPerDay = y;
         current->next->next = nullptr;
+        this->size += 1;
+        // cout << " " << x << " p: " << y << " / ";
     }
     catch(...)
     {
@@ -46,7 +49,64 @@ Node * LinkedList::getNode(unsigned int nodeNumber)
     while(current->chapterNumber != nodeNumber)
     {
         current = current->next;
+
+        if(!current)
+        {
+            break;
+        }
     }
 
-    return current;
+    if(current)
+    {
+        return current;
+    }
+    else
+    {
+        throw "! can not find node!";
+    }
+}
+
+Node * LinkedList::getNotVisitedNode()
+{
+    Node * current = this->head;
+
+    while(current->visited != false)
+    {
+        current = current->next;
+
+        if(!current)
+        {
+            break;
+        }
+    }
+
+    if(current)
+    {
+        current->visited = true;
+        return current;
+    }
+    else
+    {
+        return nullptr;
+    }
+}
+
+void LinkedList::resetVisit()
+{
+    if(isEmpty())   return;
+
+    Node * current = this->head;
+    
+    while(current->next != nullptr)
+    {
+        current->visited = false;
+        current = current->next;
+    }
+
+    current->visited = false;
+}
+
+unsigned int LinkedList::getSize()
+{
+    return this->size;
 }

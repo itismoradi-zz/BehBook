@@ -4,9 +4,9 @@ using namespace std;
 ReadingPerDay::ReadingPerDay(unsigned int days) :
     days(days)
 {
-    chapters = new int[days + 1];
-    *this << 1;     //always first capter number is 1
-    index = 1;
+    chapters = new unsigned int[days + 1];
+    index = 0;
+    *this << 1;     //always first chapter number is 1
     pages = new unsigned int[days];
 }
 
@@ -16,41 +16,42 @@ ReadingPerDay::~ReadingPerDay()
     delete chapters;
 }
 
-ReadingPerDay & ReadingPerDay::operator << (int chapter)
+ReadingPerDay & ReadingPerDay::operator << (unsigned int chapter)
 {
-    size_t index = 0;
-
-   // while()
+    if(index == days)
     {
-        
+        throw "invalid use of operator << in ReadingPerDay";
     }
-    
+
+    chapters[index] = chapter;
+    index++;
+    return *this;
 }
 
-bool ReadingPerDay::operator > (ReadingPerDay & x)
-{
-    if(this->standardDeviation() > x.standardDeviation())     //new state is more than optimal
-    {
-        return true;
-    }
-    else 
-    {
-        return false;
-    }
-}
+// bool ReadingPerDay::operator > (ReadingPerDay & x)
+// {
+//     if(this->standardDeviation() > x.standardDeviation())     //new state is more than optimal
+//     {
+//         return true;
+//     }
+//     else 
+//     {
+//         return false;
+//     }
+// }
 
-void ReadingPerDay::operator = (ReadingPerDay & x)
-{
-
-}
+// void ReadingPerDay::operator = (ReadingPerDay & x)
+// {
+//     delete [] chapters;
+//     chapters = x.getChapters();
+//     delete [] pages;
+//     pages = x.getPages();
+//     days = getDays();
+//     index = getIndex();
+// }
 
 double ReadingPerDay::standardDeviation()
 {
-   // if()
-    {
-
-    }
-    
     double avg = 0.0 , sum_deviation = 0.0;
 
     for(unsigned int i = 0; i < days; i++)  
@@ -68,7 +69,7 @@ double ReadingPerDay::standardDeviation()
     return sqrt(sum_deviation / days);
 }
 
-int * ReadingPerDay::getChapters()
+unsigned int * ReadingPerDay::getChapters()
 {
     return chapters;
 }
@@ -76,4 +77,14 @@ int * ReadingPerDay::getChapters()
 unsigned int * ReadingPerDay::getPages()
 {
     return pages;
+}
+
+unsigned int ReadingPerDay::getDays()
+{
+    return days; 
+}
+
+unsigned int ReadingPerDay::getIndex()
+{
+    return index;
 }

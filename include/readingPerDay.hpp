@@ -16,15 +16,17 @@ class ReadingPerDay
     public:
         ReadingPerDay(unsigned int);
         ~ReadingPerDay();
-        ReadingPerDay & operator << (int);
-        bool operator > (ReadingPerDay &);
-        void operator = (ReadingPerDay &);
+        ReadingPerDay & operator << (unsigned int);
+       // bool operator > (ReadingPerDay &);
+        //void operator = (ReadingPerDay &);
         double standardDeviation();
-        int * getChapters();
+        unsigned int * getChapters();
         unsigned int * getPages();
+        unsigned int getDays();
+        unsigned int getIndex();
     private:
         //dynamic arrays
-        int * chapters;         //capters traversal number
+        unsigned int * chapters;         //capters traversal number
         unsigned int * pages;   //number of pages read per each day
         unsigned int days;
         unsigned int index;     //first empty house after full houses of chapters dynamic array

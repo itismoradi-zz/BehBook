@@ -6,7 +6,7 @@ class Node
     public:
         int chapterNumber;
         unsigned int pagesPerDay;
-        bool visited; 
+        bool visited = false; 
         Node * next = nullptr;
 };
 
